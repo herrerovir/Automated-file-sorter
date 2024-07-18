@@ -2,7 +2,9 @@
 
 import os, shutil
 
-path = r"C:/Users/Virginia/Downloads/" 
+#Set path to downloads folder
+home = os.path.expanduser("~")
+path = os.path.join(home, "Downloads/")
 
 files = os.listdir(path) 
 
