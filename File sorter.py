@@ -26,6 +26,8 @@ for name in range (0, 7):
         os.makedirs(path + folders[name])
 
 #Sort files 
+print("Sorting files...")
+
 for file in files:
     for ext in images:
         if file.endswith(ext):
@@ -61,6 +63,6 @@ for file in files:
             shutil.move(path + file, path + "Codes/" + file)
             break
 
-
+print("Files sorted successfully!")
 
 
