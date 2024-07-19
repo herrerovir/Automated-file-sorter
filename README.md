@@ -1,6 +1,5 @@
 # File sorter
-![GitHub top language](https://img.shields.io/github/languages/top/herrerovir/file-sorter)
-
+![GitHub top language](https://img.shields.io/github/languages/top/herrerovir/file-sorter) ![GitHub License](https://img.shields.io/github/license/herrerovir/file-sorter)
 
 This is a basic automated script implemented in Python to sort the files in the folder "Downloads" into different folders by extensions of the files.
 
@@ -20,3 +19,6 @@ Libraries used: os, shutil
 
 * Get your files sorted!
 
+## License:
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE)  file for details
