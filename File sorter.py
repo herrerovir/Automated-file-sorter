@@ -6,7 +6,7 @@ import os, shutil
 home = os.path.expanduser("~")
 path = os.path.join(home, "Downloads/")
 
-files = os.listdir(path) 
+files = [file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
 
 #Names of the folders where I want to store the files
 folders = ["Images", "Audios", "Videos", "Texts", "Spreadsheets", "Applications", "Codes"] 
@@ -29,39 +29,23 @@ for name in range (0, 7):
 print("Sorting files...")
 
 for file in files:
-    for ext in images:
-        if file.endswith(ext):
-            shutil.move(path + file, path + "Images/" + file)
-
-    for ext in audios:
-        if file.endswith(ext):
-           shutil.move(path + file, path + "Audios/" + file)
-           break
-
-    for ext in videos:
-        if file.endswith(ext):
-            shutil.move(path + file, path + "Videos/" + file)
-            break
-
-    for ext in text:
-        if file.endswith(ext):
-            shutil.move(path + file, path + "Texts/" + file)
-            break
-
-    for ext in spreadsheets:
-        if file.endswith(ext):
-            shutil.move(path + file, path + "Spreadsheets/" + file)
-            break
-
-    for ext in applications:
-        if file.endswith(ext):
-            shutil.move(path + file, path + "Applications/" + file)
-            break
-
-    for ext in codes:
-        if file.endswith(ext):
-            shutil.move(path + file, path + "Codes/" + file)
-            break
+    ext = os.path.splitext(file)[1]
+    if ext in images:
+        shutil.move(path + file, path + "Images/" + file)
+    elif ext in audios:
+        shutil.move(path + file, path + "Audios/" + file)
+    elif ext in videos:
+        shutil.move(path + file, path + "Videos/" + file)
+    elif ext in text:
+        shutil.move(path + file, path + "Texts/" + file)
+    elif ext in spreadsheets:
+        shutil.move(path + file, path + "Spreadsheets/" + file)
+    elif ext in applications:
+        shutil.move(path + file, path + "Applications/" + file)
+    elif ext in codes:
+        shutil.move(path + file, path + "Codes/" + file)
+    else:
+        shutil.move(path + file, path + "Others/" + file)
 
 print("Files sorted successfully!")
 
